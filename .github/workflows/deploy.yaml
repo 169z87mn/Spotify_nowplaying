@@ -19,5 +19,5 @@ jobs:
         aws-region: 'ap-northeast-1'
     - run: pip install -t ./package -r ./api/requirements.txt
     - run: zip -r9 function.zip ./package/
-    - run: zip -g function.zip zip -g function.zip ./api/*
+    - run: zip -g function.zip zip -g function.zip ./api/src/*
     - run: aws lambda update-function-code --function-name spotify_nowplaying --zip-file fileb://function.zip
