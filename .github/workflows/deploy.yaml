@@ -17,7 +17,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: 'ap-northeast-1'
-    - run: pip install -t ./api/package -r ./api/requirements.txt
-    - run: zip -r9 function.zip ./api/package/
+    - run: pip install ./ -r ./api/requirements.txt
+    - run: zip -r9 function.zip ./
     - run: zip -g function.zip zip -g function.zip ./api/src/*
     - run: aws lambda update-function-code --function-name spotify_nowplaying --zip-file fileb://function.zip
