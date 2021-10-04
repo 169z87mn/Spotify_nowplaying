@@ -1,6 +1,6 @@
 import os
 import spotipy
-from src.track_data import Track
+from api.src.track_data import Track
 
 class Spotify():
     def __init__(self, token: str):

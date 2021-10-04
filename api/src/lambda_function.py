@@ -1,5 +1,5 @@
 import json
-from src.spotify import Spotify
+from api.src.spotify import Spotify
 
 def lambda_handler(event, _context):
     token = event['queryStringParameters']['code']
